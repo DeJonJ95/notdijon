@@ -38,21 +38,12 @@ export const metadata: Metadata = {
     title: 'DeJon Johnson — Principal Digital Strategist',
     description:
       'Accessible, data-driven web and email systems for the public sector. Built in Detroit.',
-    images: [
-      {
-        url: '/og.png',
-        width: 1200,
-        height: 630,
-        alt: 'DeJon Johnson — notdijon.com',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'DeJon Johnson — Principal Digital Strategist',
     description:
       'Accessible, data-driven web and email systems. Built in Detroit.',
-    images: ['/og.png'],
   },
   robots: {
     index: true,
