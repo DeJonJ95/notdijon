@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import SpotlightCursor from '@/components/SpotlightCursor';
 import CommandPalette from '@/components/CommandPalette';
+import PageTransition from '@/components/PageTransition';
 import './globals.css';
 
 const inter = Inter({
@@ -65,6 +66,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <PageTransition />
         <SpotlightCursor />
         <CommandPalette />
         {children}
