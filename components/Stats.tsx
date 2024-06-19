@@ -9,9 +9,9 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { value: 4, suffix: '+', label: 'Years in CRM & email' },
-  { value: 1, suffix: 'st', label: 'Email program at City of Detroit' },
   { value: 7, suffix: '+', label: 'Years shipping web apps' },
+  { value: 1, suffix: 'st', label: 'Email program in my department' },
+  { value: 4, suffix: '+', label: 'Years in technical strategy' },
 ];
 
 function useCountUp(target: number, run: boolean, duration = 1100) {

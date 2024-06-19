@@ -10,11 +10,11 @@ export interface Job {
 export const EXPERIENCE: Job[] = [
   {
     dates: '2025 — Present',
-    role: 'Principal Digital Strategist',
+    role: 'Web Developer & Technical Strategist',
     company: 'City of Detroit',
     companyUrl: 'https://detroitmi.gov',
     description:
-      'Orchestrate digital strategy and cross-departmental projects, setting technical standards for web development, accessibility, security, and performance. Designed and shipped an in-house inventory application that now tracks 23,000+ items across 20 locations — replacing a fragmented manual process with QR-coded check-in/out, role-based access, and PDF reporting. Author RFP specifications and lead technical vetting for vendor selection, then run onboarding and oversight as the primary liaison. Drive automation, workflow modernization, and technology adoption through curriculum design and hands-on training.',
+      'Lead technical strategy and cross-departmental projects, setting standards for web development, accessibility, security, and performance. Designed and shipped an in-house inventory application tracking 23,000+ items across 20 locations — replacing a fragmented manual process with QR-coded check-in/out, role-based access, and PDF reporting. Author RFP specifications and lead technical vetting for vendor selection, then run onboarding and oversight as the primary liaison. Drive automation, workflow modernization, and technology adoption through curriculum design and hands-on training.',
     tech: [
       'Next.js',
       'Firebase',
@@ -31,7 +31,7 @@ export const EXPERIENCE: Job[] = [
     company: 'City of Detroit',
     companyUrl: 'https://detroitmi.gov',
     description:
-      "Architected the department's first dedicated email marketing program from the ground up, building processes for campaign development, scheduling, and performance analysis. Shipped responsive HTML campaigns through GovDelivery with A/B testing, automated seasonal-staff comms (including Election Day logistics), and authored the SOPs the team still runs on.",
+      "Architected my department's first dedicated email marketing program from the ground up, building processes for campaign development, scheduling, and performance analysis. Shipped responsive HTML campaigns through GovDelivery with A/B testing, automated seasonal-staff comms (including Election Day logistics), and authored the SOPs the team still runs on.",
     tech: ['GovDelivery', 'HTML Email', 'MJML', 'A/B Testing', 'CRM'],
   },
   {

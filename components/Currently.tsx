@@ -7,7 +7,7 @@ export default function Currently() {
       </span>
       <span className="uppercase tracking-widest">Currently</span>
       <span className="text-slate-300 normal-case tracking-normal">
-        leading digital strategy for the City of Detroit
+        web development, email, &amp; technical strategy for the City of Detroit
       </span>
     </div>
   );
