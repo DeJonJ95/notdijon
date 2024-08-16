@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import SpotlightCursor from '@/components/SpotlightCursor';
 import CommandPalette from '@/components/CommandPalette';
-import PageTransition from '@/components/PageTransition';
+import SmoothScroll from '@/components/SmoothScroll';
+import Intro from '@/components/Intro';
+import AmbientAudio from '@/components/AmbientAudio';
 import './globals.css';
 
 const inter = Inter({
@@ -68,10 +70,12 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <PageTransition />
+        <SmoothScroll />
+        <Intro />
+        <AmbientAudio />
         <SpotlightCursor />
         <CommandPalette />
-        <div id="page-content" className="opacity-0">{children}</div>
+        <div id="page-content">{children}</div>
       </body>
     </html>
   );

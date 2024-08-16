@@ -26,6 +26,17 @@ body {
   color: #e2e8f0;
 }
 
+/* Ambient-audio equalizer bars (AmbientAudio.tsx) */
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
 *:focus-visible {
   outline: 2px solid #5eead4;
   outline-offset: 2px;

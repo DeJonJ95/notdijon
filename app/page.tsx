@@ -7,6 +7,7 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Writing from '@/components/Writing';
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 
 const SECTIONS = ['about', 'experience', 'projects'] as const;
 type Section = (typeof SECTIONS)[number];
@@ -36,11 +37,21 @@ export default function Page() {
       <div className="lg:flex lg:justify-between lg:gap-4">
         <Header activeSection={activeSection} />
         <main id="content" className="pt-24 lg:w-1/2 lg:py-24">
-          <About />
-          <Experience />
-          <Projects />
-          <Writing />
-          <Footer />
+          <Reveal>
+            <About />
+          </Reveal>
+          <Reveal>
+            <Experience />
+          </Reveal>
+          <Reveal>
+            <Projects />
+          </Reveal>
+          <Reveal>
+            <Writing />
+          </Reveal>
+          <Reveal>
+            <Footer />
+          </Reveal>
         </main>
       </div>
     </div>
