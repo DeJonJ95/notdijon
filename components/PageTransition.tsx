@@ -15,84 +15,108 @@ export default function PageTransition() {
     const content = document.getElementById('page-content');
     if (!content) return;
 
-    const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduce) {
+    const reveal = () => {
+      content.style.filter = '';
+      content.style.willChange = '';
+      content.style.opacity = '';
       content.classList.remove('opacity-0');
       setDone(true);
+    };
+
+    const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    // Reduced motion: skip the glitch, but still do a calm crossfade
+    // (an opacity fade has no motion/parallax, so it's vestibular-safe) —
+    // never an abrupt pop.
+    if (prefersReduce) {
+      content.classList.remove('opacity-0');
+      gsap.fromTo(
+        content,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.6, ease: 'power2.out', onComplete: () => setDone(true) },
+      );
       return;
     }
 
-    const flood = document.getElementById('db-flood');
-    const crop = document.getElementById('db-crop');
-    const morph = document.getElementById('db-morph');
+    let blink: gsap.core.Tween | null = null;
+    let tl: gsap.core.Timeline | null = null;
 
-    // Drives the SVG pixelate filter: large block size -> 1px (sharp).
-    const state = { px: 44 };
-    const apply = () => {
-      const p = Math.max(1, Math.round(state.px));
-      const half = String(Math.floor(p / 2));
-      flood?.setAttribute('x', half);
-      flood?.setAttribute('y', half);
-      crop?.setAttribute('width', String(p));
-      crop?.setAttribute('height', String(p));
-      morph?.setAttribute('radius', String(p / 2));
-    };
-    apply();
+    try {
+      const flood = document.getElementById('db-flood');
+      const crop = document.getElementById('db-crop');
+      const morph = document.getElementById('db-morph');
 
-    content.classList.remove('opacity-0');
-    content.style.filter = 'url(#digiblur)';
-    content.style.willChange = 'filter';
+      // Drives the SVG pixelate filter: large block size -> 1px (sharp).
+      const state = { px: 64 };
+      const apply = () => {
+        const p = Math.max(1, Math.round(state.px));
+        const half = String(Math.floor(p / 2));
+        flood?.setAttribute('x', half);
+        flood?.setAttribute('y', half);
+        crop?.setAttribute('width', String(p));
+        crop?.setAttribute('height', String(p));
+        morph?.setAttribute('radius', String(p / 2));
+      };
+      apply();
 
-    const tl = gsap.timeline({
-      onComplete: () => {
-        content.style.filter = '';
-        content.style.willChange = '';
-        setDone(true);
-      },
-    });
+      // Apply the filter BEFORE revealing content, so there's no flash of
+      // sharp content for a frame.
+      content.style.filter = 'url(#digiblur)';
+      content.style.willChange = 'filter';
+      content.classList.remove('opacity-0');
 
-    // Resolve the pixel blocks into a crisp page.
-    tl.to(state, { px: 1, duration: 1.7, ease: 'power3.inOut', onUpdate: apply }, 0)
-      // Two quick "signal lock" stutters partway through.
-      .to(state, { px: 28, duration: 0.06, onUpdate: apply }, 0.55)
-      .to(state, { px: 10, duration: 0.06, onUpdate: apply }, 0.95)
-      // Scan line sweeps top -> bottom once.
-      .fromTo(
-        scanRef.current,
-        { yPercent: -120, opacity: 0.9 },
-        { yPercent: 1200, opacity: 0, duration: 1.5, ease: 'power1.in' },
-        0.1,
-      )
-      // Static / noise flickers, then clears.
-      .fromTo(
-        noiseRef.current,
-        { opacity: 0.35 },
-        { opacity: 0, duration: 1.6, ease: 'rough({ strength: 1.4, points: 22, taper: out, randomize: true })' },
-        0,
-      )
-      // Status label flickers in, holds, then fades as the page sharpens.
-      .fromTo(
-        labelRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.3, ease: 'rough({ strength: 2, points: 12, taper: none })' },
-        0.1,
-      )
-      .to(labelRef.current, { opacity: 0, duration: 0.5, ease: 'power2.in' }, 1.35)
-      // Whole overlay (scanlines + glow) fades out, revealing the crisp page.
-      .to(overlayRef.current, { opacity: 0, duration: 0.9, ease: 'power2.out' }, 1.1);
+      tl = gsap.timeline({
+        defaults: { ease: 'power2.inOut' },
+        onComplete: reveal,
+      });
 
-    // Blinking caret.
-    const blink = gsap.to(caretRef.current, {
-      opacity: 0,
-      duration: 0.45,
-      repeat: -1,
-      yoyo: true,
-      ease: 'steps(1)',
-    });
+      // Core "digiblur": chunky blocks resolve to a crisp page (slow + dominant).
+      tl.to(state, { px: 1, duration: 2.2, ease: 'power3.inOut', onUpdate: apply }, 0)
+        // A few "signal lock" stutters so it reads as digital, not a smooth blur.
+        .to(state, { px: 44, duration: 0.05, onUpdate: apply }, 0.6)
+        .to(state, { px: 20, duration: 0.05, onUpdate: apply }, 1.1)
+        .to(state, { px: 30, duration: 0.05, onUpdate: apply }, 1.45)
+        // Scan line sweeps top -> bottom.
+        .fromTo(
+          scanRef.current,
+          { yPercent: -120, opacity: 0.9 },
+          { yPercent: 1200, opacity: 0, duration: 1.9, ease: 'power1.in' },
+          0.1,
+        )
+        // Static / noise clears with a stuttery, digital fade.
+        .fromTo(
+          noiseRef.current,
+          { opacity: 0.4 },
+          { opacity: 0, duration: 2.0, ease: 'steps(16)' },
+          0,
+        )
+        // Status label snaps in (stepped = digital), holds, then fades.
+        .fromTo(
+          labelRef.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.3, ease: 'steps(4)' },
+          0.15,
+        )
+        .to(labelRef.current, { opacity: 0, duration: 0.5, ease: 'power2.in' }, 1.9)
+        // Overlay (scanlines + glow) fades out, revealing the crisp page.
+        .to(overlayRef.current, { opacity: 0, duration: 0.9, ease: 'power2.out' }, 1.8);
+
+      // Blinking caret.
+      blink = gsap.to(caretRef.current, {
+        opacity: 0,
+        duration: 0.45,
+        repeat: -1,
+        yoyo: true,
+        ease: 'steps(1)',
+      });
+    } catch {
+      // If anything in the animation setup fails, never leave the page hidden.
+      reveal();
+    }
 
     return () => {
-      tl.kill();
-      blink.kill();
+      tl?.kill();
+      blink?.kill();
     };
   }, []);
 
@@ -104,10 +128,10 @@ export default function PageTransition() {
       <svg aria-hidden="true" className="absolute h-0 w-0" focusable="false">
         <filter id="digiblur" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
           <feFlood id="db-flood" x="0" y="0" width="1" height="1" floodColor="#000" result="dot" />
-          <feComposite id="db-crop" in="dot" width="44" height="44" result="cell" />
+          <feComposite id="db-crop" in="dot" width="64" height="64" result="cell" />
           <feTile in="cell" result="grid" />
           <feComposite in="SourceGraphic" in2="grid" operator="in" result="samples" />
-          <feMorphology id="db-morph" in="samples" operator="dilate" radius="22" />
+          <feMorphology id="db-morph" in="samples" operator="dilate" radius="32" />
         </filter>
       </svg>
 
