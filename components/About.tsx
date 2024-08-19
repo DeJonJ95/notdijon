@@ -13,9 +13,9 @@ export default function About() {
       <Currently />
       <div className="space-y-4">
         <p>
-          I&apos;m a web developer and email architect turned technical
-          strategist with 7+ years shipping web apps, building email programs,
-          and bridging the gap between code, policy, and people.
+          I&apos;m a web developer and email architect with 7+ years shipping
+          web apps, building email programs, and bridging the gap between code,
+          policy, and people.
         </p>
         <p>
           Today, I&apos;m the{' '}
@@ -32,7 +32,7 @@ export default function About() {
             City of Detroit
           </a>
           , where I set technical standards for web development, accessibility,
-          security, and performance — and run cross-departmental projects from
+          security, and performance, and run cross-departmental projects from
           vendor selection through staff enablement. For my department, I designed
           and shipped an in-house inventory application tracking 23,000+ items
           across 20 locations.

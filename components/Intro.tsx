@@ -112,7 +112,7 @@ export default function Intro() {
           DeJon Johnson
         </h1>
         <p className="mt-4 max-w-sm text-sm text-slate-400 sm:text-base">
-          Web developer &amp; technical strategist — building for the public sector, out of Detroit.
+          Web developer and technical strategist, out of Detroit.
         </p>
 
         <button
