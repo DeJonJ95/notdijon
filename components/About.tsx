@@ -13,12 +13,13 @@ export default function About() {
       <Currently />
       <div className="space-y-4">
         <p>
-          I&apos;m a web developer and email architect with 7+ years shipping
-          web apps, building email programs, and bridging the gap between code,
-          policy, and people.
+          I build digital systems that connect complex code with the people who
+          rely on it. Over the past nine years, I&apos;ve shaped technical
+          strategy, shipped web apps, and architected email campaigns that
+          translate institutional policy into user-friendly technology.
         </p>
         <p>
-          Today, I&apos;m the{' '}
+          As the{' '}
           <span className="font-medium text-slate-200">
             Web Developer &amp; Technical Strategist
           </span>{' '}
@@ -31,26 +32,30 @@ export default function About() {
           >
             City of Detroit
           </a>
-          , where I set technical standards for web development, accessibility,
-          security, and performance, and run cross-departmental projects from
-          vendor selection through staff enablement. For my department, I designed
-          and shipped an in-house inventory application tracking 23,000+ items
-          across 20 locations.
+          , I define the technical vision for our digital presence. I set strict
+          standards for accessibility, security, and performance while managing
+          large-scale cross-departmental initiatives. This includes selecting and
+          onboarding technical vendors and ensuring our staff has the tools they
+          need to succeed. A major milestone in this role was designing an
+          in-house inventory application capable of managing 23,000+ items across
+          20 distinct locations.
         </p>
         <p>
-          I built my department&apos;s first dedicated email marketing program from
-          scratch in GovDelivery: responsive HTML templates, A/B testing
-          protocols, automated comms for seasonal staff, and the SOPs the team
-          still runs on. On the side I ship React/Next.js apps, ecommerce
-          builds, and email development through{' '}
+          Recognizing a gap in our digital outreach, I architected the
+          department&apos;s first GovDelivery email marketing program. I
+          introduced responsive HTML templates, systematic A/B testing, and
+          automated communications for seasonal staff, alongside comprehensive
+          SOPs that keep operations running smoothly.
+        </p>
+        <p>
+          Outside of civic tech, I drive freelance projects through{' '}
           <span className="font-medium text-slate-200">Webdroid</span>
           {' '}and{' '}
-          <span className="font-medium text-slate-200">First Hill Marketing</span>.
-        </p>
-        <p>
-          When I&apos;m not in a code editor, I&apos;m teaching web development
-          — designing curriculum and running workshops that get people their
-          first real taste of building for the web.
+          <span className="font-medium text-slate-200">First Hill Marketing</span>,
+          shipping modern React/Next.js apps and custom ecommerce solutions. When
+          I step away from the code editor, my focus shifts to education,
+          designing curriculum and leading workshops that give students their
+          first real experience building for the web.
         </p>
       </div>
       <Stats />
