@@ -3,14 +3,17 @@ export interface Project {
   url: string;
   description: string;
   tech: string[];
+  /** Optional thumbnail (path under /public). */
+  image?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Notion-like App',
+    title: 'My Workspace — Notion-style App',
     url: 'https://notionlikeapp.vercel.app',
     description:
-      'A block-based document editor inspired by Notion. Supports rich text, drag-and-drop blocks, image uploads with WeakMap-backed storage, multi-image batching, and a shared editor surface that keeps DOM-measured block heights honest during inserts.',
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      'A personal Notion-style workspace that goes well beyond notes. Infinitely nestable pages with a TipTap block editor and debounced auto-save, plus a built-in budget tracker, voice recording, and AI that extracts structured data from your notes into databases. Rounded out with book look-ups, an auto-generated journal that spins up recurring to-dos, image uploads to Cloudflare R2, an installable PWA, and a companion Chrome extension that clips images from any website into a chosen note for moodboards and other creative work.',
+    tech: ['Next.js', 'TypeScript', 'Prisma', 'Neon Postgres', 'TipTap', 'AI', 'Cloudflare R2', 'PWA'],
+    image: '/projects/notion-workspace.png',
   },
 ];

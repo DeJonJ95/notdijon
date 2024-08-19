@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
 import type { Project } from '@/data/projects';
 
@@ -53,7 +54,17 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="z-10 sm:order-1 sm:col-span-2 sm:translate-y-1">
-          <div className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 aspect-video bg-slate-800/40" />
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              width={400}
+              height={225}
+              className="aspect-video rounded border-2 border-slate-200/10 object-cover transition group-hover:border-slate-200/30"
+            />
+          ) : (
+            <div className="aspect-video rounded border-2 border-slate-200/10 bg-slate-800/40 transition group-hover:border-slate-200/30" />
+          )}
         </div>
       </div>
     </li>
