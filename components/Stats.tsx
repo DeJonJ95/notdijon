@@ -9,9 +9,8 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { value: 7, suffix: '+', label: 'Years shipping web apps' },
-  { value: 1, suffix: 'st', label: 'Email program in my department' },
-  { value: 4, suffix: '+', label: 'Years in technical strategy' },
+  { value: 9, label: 'Years shipping web apps' },
+  { value: 4, label: 'Years email development' },
 ];
 
 function useCountUp(target: number, run: boolean, duration = 1100) {
@@ -36,11 +35,11 @@ function StatCell({ stat, run }: { stat: Stat; run: boolean }) {
   const v = useCountUp(stat.value, run);
   return (
     <div className="rounded-md border border-slate-800/80 bg-slate-900/40 p-4 transition-colors hover:border-accent/40">
-      <div className="font-mono text-2xl font-semibold text-slate-100 tabular-nums">
+      <div className="font-serif text-4xl font-semibold text-slate-100 tabular-nums leading-none">
         {v}
         {stat.suffix && <span className="text-accent">{stat.suffix}</span>}
       </div>
-      <div className="mt-1 text-xs leading-snug text-slate-400">
+      <div className="mt-2 font-serif text-sm italic leading-snug text-slate-400">
         {stat.label}
       </div>
     </div>
@@ -70,7 +69,7 @@ export default function Stats() {
   return (
     <div
       ref={ref}
-      className="mt-8 grid grid-cols-3 gap-3"
+      className="mt-8 grid grid-cols-2 gap-3"
       aria-label="Career stats"
     >
       {STATS.map((stat) => (
