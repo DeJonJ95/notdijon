@@ -16,8 +16,7 @@ export default function Header({ activeSection }: Props) {
           Web Developer &amp; Technical Strategist
         </h2>
         <p className="mt-4 max-w-xs leading-normal">
-          I build web apps, email systems, and technical strategy
-          for the public sector.
+          I build web apps, email systems, and technical strategy.
         </p>
         <Nav activeSection={activeSection} />
       </div>

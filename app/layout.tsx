@@ -16,7 +16,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://notdijon.com'),
   title: {
-    default: 'DeJon Johnson — Web Developer & Technical Strategist',
+    default: 'DeJon Johnson · Web Developer & Technical Strategist',
     template: '%s · DeJon Johnson',
   },
   description:
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://notdijon.com',
-    siteName: 'notdijon — DeJon Johnson',
-    title: 'DeJon Johnson — Web Developer & Technical Strategist',
+    siteName: 'notdijon · DeJon Johnson',
+    title: 'DeJon Johnson · Web Developer & Technical Strategist',
     description:
       'Web development, email systems, and technical strategy for the public sector. Built in Detroit.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DeJon Johnson — Web Developer & Technical Strategist',
+    title: 'DeJon Johnson · Web Developer & Technical Strategist',
     description:
       'Web development, email systems, and technical strategy. Built in Detroit.',
   },

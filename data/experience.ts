@@ -9,12 +9,12 @@ export interface Job {
 
 export const EXPERIENCE: Job[] = [
   {
-    dates: '2025 — Present',
+    dates: '2025 - Present',
     role: 'Web Developer & Technical Strategist',
     company: 'City of Detroit',
     companyUrl: 'https://detroitmi.gov',
     description:
-      'Lead technical strategy and cross-departmental projects, setting standards for web development, accessibility, security, and performance. Designed and shipped an in-house inventory application tracking 23,000+ items across 20 locations — replacing a fragmented manual process with QR-coded check-in/out, role-based access, and PDF reporting. Author RFP specifications and lead technical vetting for vendor selection, then run onboarding and oversight as the primary liaison. Drive automation, workflow modernization, and technology adoption through curriculum design and hands-on training.',
+      'Lead technical strategy and cross-departmental projects, setting standards for web development, accessibility, security, and performance. Designed and shipped an in-house inventory application tracking 23,000+ items across 20 locations, replacing a fragmented manual process with QR-coded check-in/out, role-based access, and PDF reporting. Author RFP specifications and lead technical vetting for vendor selection, then run onboarding and oversight as the primary liaison. Drive automation, workflow modernization, and technology adoption through curriculum design and hands-on training.',
     tech: [
       'Next.js',
       'Firebase',
@@ -26,7 +26,7 @@ export const EXPERIENCE: Job[] = [
     ],
   },
   {
-    dates: '2021 — 2025',
+    dates: '2021 - 2025',
     role: 'Email Developer',
     company: 'City of Detroit',
     companyUrl: 'https://detroitmi.gov',
@@ -35,7 +35,21 @@ export const EXPERIENCE: Job[] = [
     tech: ['GovDelivery', 'HTML Email', 'MJML', 'A/B Testing', 'CRM'],
   },
   {
-    dates: '2018 — 2025',
+    dates: '2025 - Present',
+    role: 'Program Director',
+    company: 'Webdroid · Education & Gaming Lab',
+    companyUrl: '#',
+    description:
+      'Direct the education arm of Webdroid: build curriculum for after-school and adult web-dev courses, run a community gaming lab that doubles as a recruiting funnel for the tech program, and design pathways that move students from first-day HTML to shippable React projects. Manage instructor hiring, hardware procurement, and partnerships with local schools and nonprofits.',
+    tech: [
+      'Curriculum Design',
+      'Program Management',
+      'Community Partnerships',
+      'Mentorship',
+    ],
+  },
+  {
+    dates: '2018 - 2025',
     role: 'Developer',
     company: 'Webdroid',
     companyUrl: '#',
@@ -53,7 +67,7 @@ export const EXPERIENCE: Job[] = [
     ],
   },
   {
-    dates: '2021 — 2023',
+    dates: '2021 - 2023',
     role: 'Web Development Advocate',
     company: 'Journi',
     companyUrl: '#',
