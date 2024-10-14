@@ -1,0 +1,45 @@
+<!-- ============================================================
+     GOVDELIVERY LAYOUT — paste into "Container Setup".
+     This is the shared shell: canvas + gold rule + teal header
+     + official strip ... [BODY] ... slim footer.
+     Where you see the BIG MARKER below, drop GovDelivery's
+     bulletin/content insertion control so each Template's body
+     renders there.
+     NOTE: do NOT add an unsubscribe link or mailing address here —
+     GovDelivery appends the account footer with those automatically.
+     Replace {{WEBSITE_URL}} and the social {{...}} URLs once.
+     ============================================================ -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="bg-canvas" style="background:#f2f2f2;"><tr><td align="center" style="padding:24px 12px;">
+
+  <!-- Gold accent rule -->
+  <table role="presentation" width="600" class="container" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;"><tr><td style="height:4px;background:#feb70d;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+
+  <!-- Teal header / wordmark bar -->
+  <table role="presentation" width="600" class="container" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:#004445;"><tr><td class="px" style="padding:18px 32px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td align="left" valign="middle"><a href="{{WEBSITE_URL}}" style="color:#FFFFFF;text-decoration:none;"><span class="headline" style="font-weight:800;font-size:18px;color:#FFFFFF;letter-spacing:.02em;">CITY OF DETROIT</span></a></td>
+    <td align="right" valign="middle" class="eyebrow" style="font-size:11px;font-weight:700;color:#feb70d;letter-spacing:.12em;">DEMOCRACY IN DETROIT</td>
+  </tr></table></td></tr></table>
+
+  <!-- Official-message strip -->
+  <table role="presentation" width="600" class="container" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:#003637;"><tr><td class="px" align="center" style="padding:7px 32px;font-size:11px;color:#9fd5b3;">An official voter-information message from the City of Detroit · Nonpartisan</td></tr></table>
+
+
+  <!-- ====================================================================== -->
+  <!-- ====  GOVDELIVERY: PLACE THE BULLETIN / TEMPLATE BODY CONTROL HERE  ==== -->
+  <!-- ====  Each Template's body_email_N.html renders in this slot.       ==== -->
+  <!-- ====================================================================== -->
+
+
+  <!-- Slim footer (social + nonpartisan disclaimer only). -->
+  <table role="presentation" width="600" class="container" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;">
+    <tr><td class="px" style="padding:24px 40px 8px;" align="center">
+      <a href="{{FACEBOOK_URL}}" class="eyebrow" style="font-size:12px;font-weight:700;color:#004445;padding:0 8px;">Facebook</a><span style="color:#9aa4ae;">·</span>
+      <a href="{{INSTAGRAM_URL}}" class="eyebrow" style="font-size:12px;font-weight:700;color:#004445;padding:0 8px;">Instagram</a><span style="color:#9aa4ae;">·</span>
+      <a href="{{TWITTER_URL}}" class="eyebrow" style="font-size:12px;font-weight:700;color:#004445;padding:0 8px;">X / Twitter</a>
+    </td></tr>
+    <tr><td class="px muted" align="center" style="padding:10px 40px 28px;font-size:12px;line-height:19px;color:#5A6470;">
+      This is a nonpartisan voter-information message. We do not endorse any candidate or party.
+    </td></tr>
+  </table>
+
+</td></tr></table>

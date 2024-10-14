@@ -1,22 +1,43 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { FiArrowDown, FiVolume2, FiVolumeX } from 'react-icons/fi';
 import type Lenis from 'lenis';
 
+// Session flag so the intro plays once per browser session, on the home page only.
+const SESSION_KEY = 'notdijon:introSeen';
+
 export default function Intro() {
+  const pathname = usePathname();
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const beganRef = useRef(false);
   const [soundOn, setSoundOn] = useState(true);
+  const [shouldRender, setShouldRender] = useState(false);
   const [gone, setGone] = useState(false);
 
+  // Decide whether to render at all. Runs once on client mount.
   useEffect(() => {
+    if (pathname !== '/') return;
+    try {
+      if (sessionStorage.getItem(SESSION_KEY)) return;
+    } catch {
+      // sessionStorage blocked (private mode, etc.) — still show intro.
+    }
+    setShouldRender(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Animation effect — only wires up listeners and locks scroll if the intro will render.
+  useEffect(() => {
+    if (!shouldRender) return;
     const overlay = overlayRef.current;
     if (!overlay) return;
 
-    const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduce =
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     const getLenis = () => (window as unknown as { __lenis?: Lenis }).__lenis;
 
     // Lock scrolling while the intro is up.
@@ -28,7 +49,14 @@ export default function Intro() {
       gsap.fromTo(
         contentRef.current.children,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.12, delay: 0.15 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.12,
+          delay: 0.15,
+        },
       );
     }
 
@@ -36,21 +64,42 @@ export default function Intro() {
       if (beganRef.current) return;
       beganRef.current = true;
 
-      window.dispatchEvent(new CustomEvent('ambient:set', { detail: { on: soundOn } }));
+      window.dispatchEvent(
+        new CustomEvent('ambient:set', { detail: { on: soundOn } }),
+      );
 
       const finish = () => {
+        try {
+          sessionStorage.setItem(SESSION_KEY, '1');
+        } catch {
+          // ignore
+        }
         document.body.style.overflow = '';
         getLenis()?.start();
         setGone(true);
       };
 
       if (prefersReduce) {
-        gsap.to(overlay, { opacity: 0, duration: 0.5, ease: 'power2.out', onComplete: finish });
+        gsap.to(overlay, {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+          onComplete: finish,
+        });
       } else {
         gsap
           .timeline({ onComplete: finish })
-          .to(contentRef.current, { opacity: 0, y: -20, duration: 0.4, ease: 'power2.in' })
-          .to(overlay, { yPercent: -100, duration: 1.0, ease: 'expo.inOut' }, '-=0.1');
+          .to(contentRef.current, {
+            opacity: 0,
+            y: -20,
+            duration: 0.4,
+            ease: 'power2.in',
+          })
+          .to(
+            overlay,
+            { yPercent: -100, duration: 1.0, ease: 'expo.inOut' },
+            '-=0.1',
+          );
       }
 
       cleanup();
@@ -78,9 +127,9 @@ export default function Intro() {
     };
     // soundOn intentionally read at begin-time via closure recreation below
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [soundOn]);
+  }, [soundOn, shouldRender]);
 
-  if (gone) return null;
+  if (!shouldRender || gone) return null;
 
   return (
     <div
