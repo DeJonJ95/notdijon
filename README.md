@@ -1,6 +1,6 @@
 # DeJon Johnson · Portfolio
 
-A personal portfolio inspired by [brittanychiang.com](https://brittanychiang.com), rebuilt with your resume.
+Personal portfolio and resume site — dark-themed, built with Next.js 14 and Tailwind CSS.
 
 ## Stack
 
