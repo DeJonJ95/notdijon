@@ -3,16 +3,16 @@
 You don't need Campaigns or Segments. Each email = one **Bulletin**, built from its template, sent to your **Topic**. Repeat 7 times.
 
 ## Before you start (once)
-- Confirm the 7 Custom Templates exist (`DID — Email 1…7`) on the `Democracy in Detroit` layout.
+- Confirm the 7 Custom Templates exist (`DID · Email 1…7`) on the `Democracy in Detroit` layout.
 - Know **which Topic** you administer and that it's the audience you want. That topic's subscribers ARE your reachable list.
 - Have final copy + live URLs ready for each email's `{{placeholders}}`.
 
 ## Per email (repeat for all 7)
 1. **Bulletins → Create Bulletin** (a.k.a. "New Bulletin").
-2. **Choose template:** pick `DID — Email N …` so the design + content load in.
+2. **Choose template:** pick `DID · Email N …` so the design + content load in.
 3. **From:** leave as *account default: City of Detroit*.
 4. **Subject line:** type it here (subject lives on the bulletin, not the template). Use the plan's subject for that email.
-5. **Audience / Topics:** select your assigned Topic. (As a Topic Admin you can only pick topics you administer — that's expected.)
+5. **Audience / Topics:** select your assigned Topic. (As a Topic Admin you can only pick topics you administer. That's expected.)
 6. **Body:** confirm every `{{placeholder}}` is replaced with real copy/URLs and UTM tags are on the links. Nothing in double-curlies should remain.
 7. **Preview** and **Send a Test** to yourself + one colleague. Open it on Gmail, Outlook, and an iPhone. Click every link, including the auto-appended unsubscribe.
 8. **Schedule:** set the send date/time (mid-morning ET, ~10 a.m.). Or "Send Now" only if it's go-time.
@@ -33,9 +33,9 @@ Dates in copy to double-check before each send: early voting **July 25–Aug 2**
 
 ## After each send
 - **Reports** → check delivered / open / click for that bulletin.
-- Bounces and unsubscribes are handled automatically by GovDelivery — you don't manage them manually.
+- Bounces and unsubscribes are handled automatically by GovDelivery, so you don't manage them manually.
 
 ## Notes / limits as Topic Admin
 - You can only send to topics you administer; you can't reach the whole account list. If you need a broader audience, an **Account Administrator** has to send it or assign you the topic.
-- You can schedule all 7 now and just let them fire — no need to log in on each date. Edit or reschedule any one beforehand if dates/links change.
-- Emails 4 and 6 say "tomorrow" — re-verify their send dates before they go.
+- You can schedule all 7 now and just let them fire, with no need to log in on each date. Edit or reschedule any one beforehand if dates/links change.
+- Emails 4 and 6 say "tomorrow," so re-verify their send dates before they go.
