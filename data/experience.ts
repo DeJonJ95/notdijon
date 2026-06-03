@@ -31,8 +31,8 @@ export const EXPERIENCE: Job[] = [
     company: 'City of Detroit',
     companyUrl: 'https://detroitmi.gov',
     description:
-      "Architected my department's first dedicated email marketing program from the ground up, building processes for campaign development, scheduling, and performance analysis. Shipped responsive HTML campaigns through GovDelivery with A/B testing, automated seasonal-staff comms (including Election Day logistics), and authored the SOPs the team still runs on.",
-    tech: ['GovDelivery', 'HTML Email', 'MJML', 'A/B Testing', 'CRM'],
+      "Architected my department's first dedicated email marketing program from the ground up, building processes for campaign development, scheduling, and performance analysis. Shipped responsive HTML campaigns through GovDelivery with A/B testing, and ran Meta and Google paid ads promoting elections emails and events to drive registrations and attendance. Automated seasonal-staff comms (including Election Day logistics) and authored the SOPs the team still runs on.",
+    tech: ['GovDelivery', 'HTML Email', 'MJML', 'A/B Testing', 'Paid Ads', 'Analytics', 'CRM'],
   },
   {
     dates: '2025 - Present',
@@ -54,7 +54,7 @@ export const EXPERIENCE: Job[] = [
     company: 'Webdroid',
     companyUrl: '#',
     description:
-      'Built responsive web apps and email templates for retail and SMB clients. Engineered custom storefronts on WordPress/WooCommerce and Shopify (Liquid), integrated Stripe, and stood up analytics dashboards via GA4 and Google Tag Manager. Established CI/CD pipelines with GitHub Actions deploying to Vercel.',
+      'Won and delivered B2B website clients end to end, from prospecting and proposals to launch. Built responsive web apps and email templates, engineered custom storefronts on WordPress/WooCommerce and Shopify (Liquid) with Stripe, and stood up GA4 and Google Tag Manager dashboards. Ran A/B testing, conversion optimization, and technical SEO for client sites, used AI tools to speed delivery, and established CI/CD pipelines with GitHub Actions deploying to Vercel.',
     tech: [
       'React',
       'Next.js',
@@ -62,8 +62,10 @@ export const EXPERIENCE: Job[] = [
       'Tailwind CSS',
       'WordPress',
       'Shopify',
-      'Firebase',
       'Stripe',
+      'B2B Sales',
+      'SEO / CRO',
+      'AI',
     ],
   },
   {

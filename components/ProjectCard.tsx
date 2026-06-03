@@ -3,6 +3,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import type { Project } from '@/data/projects';
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const isLink = Boolean(project.url) && project.url !== '#';
   return (
     <li className="mb-12">
       <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
@@ -17,25 +18,31 @@ export default function ProjectCard({ project }: { project: Project }) {
           className="z-10 sm:order-2 sm:col-span-6"
         >
           <h3>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-baseline font-medium leading-tight text-slate-200
-                hover:text-accent focus-visible:text-accent group/link text-base"
-              aria-label={project.title}
-            >
-              <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
-              <span>
+            {isLink ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-baseline font-medium leading-tight text-slate-200
+                  hover:text-accent focus-visible:text-accent group/link text-base"
+                aria-label={project.title}
+              >
+                <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
+                <span>
+                  {project.title}
+                  <FiArrowUpRight
+                    className="inline-block h-4 w-4 shrink-0 translate-y-px transition-transform
+                      group-hover/link:-translate-y-1 group-hover/link:translate-x-1
+                      motion-reduce:transition-none ml-0.5"
+                    aria-hidden="true"
+                  />
+                </span>
+              </a>
+            ) : (
+              <span className="inline-flex items-baseline font-medium leading-tight text-slate-200 text-base">
                 {project.title}
-                <FiArrowUpRight
-                  className="inline-block h-4 w-4 shrink-0 translate-y-px transition-transform
-                    group-hover/link:-translate-y-1 group-hover/link:translate-x-1
-                    motion-reduce:transition-none ml-0.5"
-                  aria-hidden="true"
-                />
               </span>
-            </a>
+            )}
           </h3>
 
           <p className="mt-2 text-sm leading-normal">{project.description}</p>

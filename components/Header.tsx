@@ -13,10 +13,11 @@ export default function Header({ activeSection }: Props) {
           <a href="/">DeJon Johnson</a>
         </h1>
         <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-          Web Developer &amp; Technical Strategist
+          Full-Stack Developer &amp; Digital Strategist
         </h2>
         <p className="mt-4 max-w-xs leading-normal">
-          I build web apps, email systems, and technical strategy.
+          I build web apps and email systems, and drive the growth, analytics,
+          and strategy that make them perform.
         </p>
         <Nav activeSection={activeSection} />
       </div>

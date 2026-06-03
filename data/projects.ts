@@ -17,17 +17,17 @@ export const PROJECTS: Project[] = [
     image: '/projects/notion-workspace.png',
   },
   {
-    title: 'Democracy in Detroit: Email Campaign',
-    url: '/email-samples',
+    title: 'Inventory Management Platform',
+    url: '#',
     description:
-      'A 7-email voter-engagement series for the 2026 Detroit Primary. Built on a single master template with shared header, footer, button, and hero components; each numbered send is a token-driven remix. Styled with the City of Detroit brand kit (sourced from detroitmi.gov), Montserrat with Helvetica fallback, fully responsive, and drop-in ready for GovDelivery or any ESP. View the gallery to scroll through all seven sends.',
+      'An internal asset platform that tracks 23,000+ items across 20 locations. QR-coded check-in and check-out, role-based access for staff and admins, label and tag printing, and on-demand PDF and CSV reporting, backed by Firebase Cloud Functions. Replaced a fragmented manual process and now serves as the system of record for departmental assets.',
     tech: [
-      'HTML Email',
-      'Template System',
-      'Brand Tokens',
-      'GovDelivery',
-      'Accessibility',
-      'Responsive',
+      'Next.js',
+      'Firebase',
+      'Cloud Functions',
+      'QR Scanning',
+      'jsPDF',
+      'Tailwind CSS',
     ],
   },
 ];
