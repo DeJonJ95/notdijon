@@ -9,7 +9,7 @@ import Writing from '@/components/Writing';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';
 
-const SECTIONS = ['about', 'experience', 'projects'] as const;
+const SECTIONS = ['about', 'experience', 'projects', 'writing'] as const;
 type Section = (typeof SECTIONS)[number];
 
 export default function Page() {

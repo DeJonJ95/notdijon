@@ -6,6 +6,7 @@ const LINKS = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
+  { id: 'writing', label: 'Writing' },
 ];
 
 export default function Nav({ activeSection }: Props) {
