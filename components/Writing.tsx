@@ -20,7 +20,7 @@ export default function Writing() {
     >
       <SectionHeading id="writing" label="Writing" />
       <ul className="space-y-4">
-        {ARTICLES.map((a) => (
+        {ARTICLES.filter((a) => a.status === 'published').map((a) => (
           <li key={a.slug}>
             <Link
               href={`/writing/${a.slug}`}

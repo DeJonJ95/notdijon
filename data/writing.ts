@@ -7,6 +7,7 @@ export interface Article {
   readingTime: string;
   tags: string[];
   coverImage: string;
+  status: 'published' | 'draft';
 }
 
 export const ARTICLES: Article[] = [
@@ -19,5 +20,6 @@ export const ARTICLES: Article[] = [
     readingTime: '11 min read',
     tags: ['AI', 'Next.js', 'Prisma', 'Product'],
     coverImage: '/writing/turn-notes-into-database-rows/00-cover.png',
+    status: 'draft',
   },
 ];
