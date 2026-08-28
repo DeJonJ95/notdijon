@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-28",
+  "files": {
+    "app/email-samples/page.tsx": {
+      "functionLoc": 192
+    },
+    "app/opengraph-image.tsx": {
+      "functionLoc": 93
+    },
+    "components/CommandPalette.tsx": {
+      "functionLoc": 273
+    },
+    "components/Intro.tsx": {
+      "functionLoc": 169,
+      "castChain": 1
+    },
+    "components/SmoothScroll.tsx": {
+      "castChain": 2,
+      "commentRatio": 0.174
+    }
+  }
+}
