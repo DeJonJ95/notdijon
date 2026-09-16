@@ -4,7 +4,6 @@ import SpotlightCursor from '@/components/SpotlightCursor';
 import CommandPalette from '@/components/CommandPalette';
 import SmoothScroll from '@/components/SmoothScroll';
 import Intro from '@/components/Intro';
-import AmbientAudio from '@/components/AmbientAudio';
 import './globals.css';
 
 const inter = Inter({
@@ -77,7 +76,6 @@ export default function RootLayout({
         </a>
         <SmoothScroll />
         <Intro />
-        <AmbientAudio />
         <SpotlightCursor />
         <CommandPalette />
         <div id="page-content">{children}</div>

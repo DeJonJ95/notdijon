@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
-import { FiArrowDown, FiVolume2, FiVolumeX } from 'react-icons/fi';
+import { FiArrowDown } from 'react-icons/fi';
 import type Lenis from 'lenis';
 
 // Session flag so the intro plays once per browser session, on the home page only.
@@ -14,7 +14,6 @@ export default function Intro() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const beganRef = useRef(false);
-  const [soundOn, setSoundOn] = useState(true);
   const [shouldRender, setShouldRender] = useState(false);
   const [gone, setGone] = useState(false);
 
@@ -63,10 +62,6 @@ export default function Intro() {
     const begin = () => {
       if (beganRef.current) return;
       beganRef.current = true;
-
-      window.dispatchEvent(
-        new CustomEvent('ambient:set', { detail: { on: soundOn } }),
-      );
 
       const finish = () => {
         try {
@@ -125,9 +120,7 @@ export default function Intro() {
       cleanup();
       document.body.style.overflow = '';
     };
-    // soundOn intentionally read at begin-time via closure recreation below
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [soundOn, shouldRender]);
+  }, [shouldRender]);
 
   if (!shouldRender || gone) return null;
 
@@ -140,20 +133,6 @@ export default function Intro() {
       <noscript>
         <style>{`.intro-overlay{display:none!important}`}</style>
       </noscript>
-
-      {/* Sound preference toggle (doesn't trigger begin) */}
-      <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation();
-          setSoundOn((v) => !v);
-        }}
-        aria-label={soundOn ? 'Start with sound on' : 'Start muted'}
-        className="absolute right-6 top-6 flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/60 px-3 py-1.5 text-xs font-medium uppercase tracking-widest text-slate-300 transition-colors hover:border-accent/60 hover:text-accent"
-      >
-        {soundOn ? <FiVolume2 className="h-4 w-4" /> : <FiVolumeX className="h-4 w-4" />}
-        {soundOn ? 'Sound on' : 'Muted'}
-      </button>
 
       <div ref={contentRef} className="flex flex-col items-center">
         <span className="font-mono text-xs uppercase tracking-[0.5em] text-accent">Portfolio</span>

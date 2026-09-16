@@ -9,6 +9,22 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    title: 'rent free haus',
+    url: 'https://rentfreehaus.com',
+    description:
+      'The website for a listening bar in Detroit, built to turn a first visit into a reservation, a night out, or a membership waitlist signup. The owners edit every page, menu, and event themselves in a standalone Sanity Studio with live draft previews. A scheduled job pulls bookings from Google Calendar into the events list and publishes a subscribable calendar feed, all set in oversized type on a hard grid.',
+    tech: ['Next.js', 'TypeScript', 'Sanity CMS', 'Vercel Cron', 'Mailchimp', 'Vitest'],
+    image: '/projects/rentfreehaus.jpg',
+  },
+  {
+    title: 'Sip + Sounds',
+    url: 'https://sipsounds.com',
+    description:
+      'Home for a DJ series filmed at rent free haus in Detroit. Each session gets its own page with the full set on YouTube and a tracklist stored as structured data, synced to the player so tapping a track jumps to that moment. Artist pages, an RSS feed, generated share cards, a newsletter signup, and a one-switch holding mode for launch are all driven from a single entry per session.',
+    tech: ['Next.js', 'TypeScript', 'YouTube IFrame API', 'Klaviyo', 'Resend', 'Tailwind CSS'],
+    image: '/projects/sipsounds.jpg',
+  },
+  {
     title: 'My Workspace: a Notion-style App',
     url: 'https://notionlikeapp.vercel.app',
     description:

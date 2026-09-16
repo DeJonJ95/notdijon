@@ -1,6 +1,5 @@
 import SectionHeading from './SectionHeading';
 import Currently from './Currently';
-import Stats from './Stats';
 
 export default function About() {
   return (
@@ -59,7 +58,6 @@ export default function About() {
           building for the web.
         </p>
       </div>
-      <Stats />
     </section>
   );
 }
