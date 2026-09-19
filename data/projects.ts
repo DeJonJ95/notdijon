@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     url: 'https://rentfreehaus.com',
     description: [
       'Website for a small listening bar in Detroit.',
-      'The site handles the practical side of the room—menus, events, reservations, and the membership waitlist—without losing the personality of the space. The owners manage everything through Sanity, while events are pulled in from Google Calendar and published automatically to the site and calendar feed.',
+      'The site handles the practical side of the room (menus, events, reservations, and the membership waitlist) without losing the personality of the space. The owners manage everything through Sanity, while events are pulled in from Google Calendar and published automatically to the site and calendar feed.',
       'The visual system is simple: big type, a rigid grid, and very little getting in the way.',
     ],
     tech: ['Next.js', 'TypeScript', 'Sanity CMS', 'Vercel Cron', 'Mailchimp', 'Vitest'],

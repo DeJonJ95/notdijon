@@ -12,17 +12,18 @@ export default function About() {
       <Currently />
       <div className="space-y-4">
         <p>
-          I build digital systems that connect complex code with the people who
-          rely on it. Over the past nine years, I&apos;ve shipped full-stack web
-          apps, architected email and CRM programs, and run the analytics,
-          growth, and automation that turn them into results.
+          I build websites, internal tools, and digital systems for teams that
+          need them to work well in the real world.
         </p>
         <p>
-          As the{' '}
-          <span className="font-medium text-slate-200">
-            Web Developer &amp; Technical Strategist
-          </span>{' '}
-          for the{' '}
+          Over the past nine years, my work has moved between development, email,
+          analytics, automation, and digital strategy. I like being close to the
+          code, but I also care about what happens after something ships: who has
+          to use it, who has to maintain it, and whether it actually makes the
+          work easier.
+        </p>
+        <p>
+          At the{' '}
           <a
             href="https://detroitmi.gov"
             className="font-medium text-slate-200 hover:text-accent transition-colors"
@@ -31,31 +32,32 @@ export default function About() {
           >
             City of Detroit
           </a>
-          , I set the technical direction for our digital presence: standards for
-          accessibility, security, and performance, plus the cross-departmental
-          initiatives that put them into practice. I select and onboard technical
-          vendors and make sure staff have the tools they need. One milestone was
-          designing an in-house inventory application that manages 23,000+ items
-          across 20 distinct locations.
+          , I work across web development and technical strategy. I help shape how
+          our digital tools are built and maintained, from accessibility and
+          performance standards to vendor selection and internal systems. One of
+          those projects is an inventory application that now tracks more than
+          23,000 items across 20 locations.
         </p>
         <p>
-          I also architected the department&apos;s first GovDelivery email
-          program: responsive HTML templates, systematic A/B testing, automated
-          communications, and the SOPs that keep it running. On the growth side, I
-          run paid ads across Meta and Google, conversion optimization, and
-          technical SEO, all measured through GA4 and Google Tag Manager.
+          I also built the department&apos;s GovDelivery email program, including
+          responsive templates, testing, automated communications, and the
+          documentation staff use to keep it running. My work also covers paid
+          campaigns, technical SEO, GA4, Google Tag Manager, and conversion
+          tracking.
         </p>
         <p>
-          Through{' '}
-          <span className="font-medium text-slate-200">Webdroid</span>
-          {' '}and{' '}
-          <span className="font-medium text-slate-200">First Hill Marketing</span>,
-          I take freelance work end to end: winning B2B clients, then shipping
-          modern React/Next.js apps and custom ecommerce, and leaning on AI tools
-          like Claude, ChatGPT, and Zapier to move faster. When I step away from
-          the editor, my focus shifts to education, designing curriculum and
-          leading workshops that give students their first real experience
-          building for the web.
+          Outside of the city, I build for clients through{' '}
+          <span className="font-medium text-slate-200">Webdroid</span> and{' '}
+          <span className="font-medium text-slate-200">First Hill Marketing</span>
+          . That work usually means taking a project from an early conversation
+          through design, development, launch, and whatever comes next. Most of it
+          lives in React, Next.js, ecommerce, and the growing set of AI and
+          automation tools that make repetitive work easier.
+        </p>
+        <p>
+          I also teach web development. I&apos;ve designed curriculum, led
+          workshops, and helped students get comfortable building something real
+          for the first time.
         </p>
       </div>
     </section>
