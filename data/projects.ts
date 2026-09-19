@@ -9,6 +9,13 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    title: 'Shumake Studios',
+    url: 'https://shumake-studios.vercel.app',
+    description:
+      'Client site for a Detroit creative direction, photography, and brand studio, built from a mockup she signed off on into a site she runs herself. Every word, price, and photograph is editable in Sanity, with click-to-edit straight from the page and published changes streaming in without a rebuild. Work, services, and booking are driven by the same content, and the booking flow composes a detailed brief for her inbox without a backend.',
+    tech: ['Next.js', 'TypeScript', 'Sanity CMS', 'Vercel', 'Client Work'],
+  },
+  {
     title: 'rent free haus',
     url: 'https://rentfreehaus.com',
     description:
