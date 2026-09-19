@@ -45,7 +45,11 @@ export default function ProjectCard({ project }: { project: Project }) {
             )}
           </h3>
 
-          <p className="mt-2 text-sm leading-normal">{project.description}</p>
+          {project.description.map((paragraph) => (
+            <p key={paragraph} className="mt-2 text-sm leading-normal">
+              {paragraph}
+            </p>
+          ))}
 
           {project.tech.length > 0 && (
             <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
